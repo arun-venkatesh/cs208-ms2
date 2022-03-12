@@ -30,6 +30,21 @@ public class Handler {
 		return returnString;
 	}
 	
+	@GetMapping("/bloat")
+	public String allocateMemory(String sleepTime, String size) {
+		try {
+			Thread.sleep(new Long(sleepTime));
+		}catch(Exception e) {
+		}
+			
+		String[] arr = new String[Integer.parseInt(size)];
+		arr[Integer.parseInt(size)- 1 ] = "By Arun and Rucha";
+		arr[0] = "CS208 Project - Winter 2022";
+		
+		String returnString = "The total number of memory allocated is "+size;
+		return returnString;
+	}
+	
 	
 	private static boolean isPrime(long number) {
 	     if (number < 2) {
